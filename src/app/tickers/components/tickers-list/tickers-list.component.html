@@ -1,0 +1,17 @@
+
+<mat-toolbar color="default">
+  Available Tickers
+</mat-toolbar>
+
+<mat-divider></mat-divider>
+
+<div [hidden]="!loading" >
+  <mat-spinner></mat-spinner>
+</div>
+
+ 
+<mat-grid-list cols="6" rowHeight="100px" [gutterSize]="'10px'">
+  <mat-grid-tile *ngFor="let ticker of tickers">
+    <app-ticker [ticker]="ticker" (click)="goToTickerDetails(ticker.id)"></app-ticker>
+  </mat-grid-tile>
+</mat-grid-list>

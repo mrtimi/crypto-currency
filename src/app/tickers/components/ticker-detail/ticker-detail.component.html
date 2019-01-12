@@ -1,0 +1,93 @@
+<div [hidden]="!loading" >
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="ticker !== undefined">
+
+  <mat-toolbar color="default">
+    {{ticker.name}}
+  </mat-toolbar>
+
+  <mat-divider></mat-divider>
+
+  <table>
+    <thead>
+      <tr class="mat-header-row ng-star-inserted">
+        <th class="mat-header-cell">Attribute</th>
+        <th class="mat-header-cell">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!---->
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Id</td>
+        <td class="mat-cell">{{ticker.id}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Symbol</td>
+        <td class="mat-cell">{{ticker.symbol}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Name</td>
+        <td class="mat-cell">{{ticker.name}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Name Id</td>
+        <td class="mat-cell">{{ticker.nameid}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Rank</td>
+        <td class="mat-cell">{{ticker.rank}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Price USD</td>
+        <td class="mat-cell">{{ticker.price_usd}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Percent Change : last hour</td>
+        <td class="mat-cell">{{ticker.percent_change_1h}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Percent Change : last 24 hours</td>
+        <td class="mat-cell">{{ticker.percent_change_24h}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Percent Change : last Week</td>
+        <td class="mat-cell">{{ticker.percent_change_7d}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Price BTC</td>
+        <td class="mat-cell">{{ticker.price_btc}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Market Cap USD</td>
+        <td class="mat-cell">{{ticker.market_cap_usd}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Volume 24</td>
+        <td class="mat-cell">{{ticker.valume24}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Volume 24a</td>
+        <td class="mat-cell">{{ticker.valume24a}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Csupply</td>
+        <td class="mat-cell">{{ticker.csupply}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Tsupply</td>
+        <td class="mat-cell">{{ticker.tsupply}}</td>
+      </tr>
+      <tr class="mat-row ng-star-inserted">
+        <td class="mat-cell">Msupply</td>
+        <td class="mat-cell">{{ticker.msupply}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<mat-divider></mat-divider>
+
+<button color="primary" mat-stroked-button (click)="returnToTickersList()">Return</button>

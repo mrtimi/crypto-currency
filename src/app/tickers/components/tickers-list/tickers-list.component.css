@@ -1,0 +1,28 @@
+mat-toolbar{
+    justify-content: center
+}
+mat-grid-list {
+    margin-left : 5%;
+    margin-right: 5%;
+}
+mat-grid-tile {
+    background: #226fbe;;
+    font-size:12px;
+    color:white;
+    border:2px;
+    border-radius: 10px; 
+}
+mat-grid-tile:hover{
+    background: #4593e3;
+    cursor: pointer;
+}
+mat-divider{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+mat-spinner{
+    margin:auto;
+    position: relative;
+    margin-left: 50%;
+    margin-right: 50%;
+}
