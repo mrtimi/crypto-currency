@@ -18,7 +18,8 @@ This project is based on :
 2. Add filter options
 3. Make your UI responsive
 
-#Setup Projet
+# Execute Project
+
     git clone https://github.com/mrtimi/crypto-currency.git
     cd currency-catalog
     npm install
