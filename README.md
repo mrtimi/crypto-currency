@@ -21,7 +21,7 @@ This project is based on :
 # Execute Project
 
     git clone https://github.com/mrtimi/crypto-currency.git
-    cd currency-catalog
+    cd crypto-currency
     npm install
     npm run build
     npm run start -- --port=8000
