@@ -8,7 +8,8 @@ import {
   MatButtonModule,
   MatPaginatorModule,
   MatInputModule,
-  MatSelectModule
+  MatSelectModule,
+  MatIconModule
 } from '@angular/material';
 import { FlexLayoutModule, } from '@angular/flex-layout';
 
@@ -37,7 +38,8 @@ import { FormsModule } from '@angular/forms';
     MatSelectModule,
     MatInputModule,
     FormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatIconModule
   ]
 })
 export class TickersModule { }

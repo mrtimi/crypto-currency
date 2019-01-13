@@ -88,9 +88,16 @@ export class TickersListComponent implements OnInit, AfterContentInit {
   }
 
   filterTickers(){
-    this.tickers = this.tickers.filter(_ticker => _ticker[this.filter.filterKey].includes(this.filter.filterValue));
+    if(this.filter.filterKey!="" && this.filter.filterValue!=""){
+      this.tickers = this.tickers.filter(_ticker => _ticker[this.filter.filterKey].includes(this.filter.filterValue));
+    }
   }
 
-  
+  refresh(){
+    this.filter.filterKey = "";
+    this.filter.filterValue = "";
+    this.getTickersNumber();
+    this.loadTickers(this.startIndex, this.pageSize);
+  }
 
 }
