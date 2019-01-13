@@ -14,8 +14,19 @@ export class TickersService {
   
   constructor(private http: HttpClient) { }
 
-  getTickers(): Observable<any>{
-    return this.http.get(environment.apiUrl+"tickers/").pipe(
+  getTickersPage(startIndex: number, pageSize: number): Observable<any>{
+    let url = `${environment.apiUrl}tickers/?start=${startIndex}&limit=${pageSize}`
+    return this.http.get(url).pipe(
+      map((response)=>{
+        return response;
+      }),
+      catchError(this.handleError)
+    );
+  }
+
+  getTickersNumber(): Observable<any>{
+    let url = `${environment.apiUrl}tickers/`
+    return this.http.get(url).pipe(
       map((response)=>{
         return response;
       }),

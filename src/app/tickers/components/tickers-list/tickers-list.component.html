@@ -5,12 +5,40 @@
 
 <mat-divider></mat-divider>
 
+<div class="search">
+
+  <mat-form-field>
+    <input matInput placeholder="Search tickers" [(ngModel)]="filter.filterValue">
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-select 
+      placeholder="Filter on"
+      [(ngModel)]="filter.filterKey">
+      <mat-option 
+        *ngFor="let option of searchOptions" 
+        [value]="option.value">
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <button color="primary" mat-stroked-button (click)="filterTickers()">Serach</button>
+</div>
+
+<mat-divider></mat-divider>
+<mat-paginator [ngStyle]="{'display': loading ? 'none' : '' }"
+    [length]="tickersNumebr" 
+    [pageSize]="10" 
+    [showFirstLastButtons]="true" 
+    [pageSizeOptions]="[10, 50, 100]" 
+    (page)="pageChanged()">
+</mat-paginator>
+
 <div [hidden]="!loading" >
   <mat-spinner></mat-spinner>
 </div>
-
  
-<mat-grid-list cols="6" rowHeight="100px" [gutterSize]="'10px'">
+<mat-grid-list cols="6" rowHeight="100px" [gutterSize]="'10px'" [ngStyle]="{'display': loading ? 'none' : '' }">
   <mat-grid-tile *ngFor="let ticker of tickers">
     <app-ticker [ticker]="ticker" (click)="goToTickerDetails(ticker.id)"></app-ticker>
   </mat-grid-tile>

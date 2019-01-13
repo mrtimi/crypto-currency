@@ -1,9 +1,10 @@
 mat-toolbar{
-    justify-content: center
+    justify-content: center;
 }
 mat-grid-list {
     margin-left : 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
 }
 mat-grid-tile {
     background: #226fbe;;
@@ -25,4 +26,14 @@ mat-spinner{
     position: relative;
     margin-left: 50%;
     margin-right: 50%;
+}
+mat-paginator{
+    position: relative;
+    margin-right: 5%;
+}
+.search{
+    margin-left: 5%;
+}
+.mat-form-field{
+    margin-right : 5%;
 }
