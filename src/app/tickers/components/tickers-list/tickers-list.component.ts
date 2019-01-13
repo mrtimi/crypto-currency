@@ -1,14 +1,15 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterContentInit } from '@angular/core';
 import { TickersService } from '../../services/tickers.service';
 import { Router } from '@angular/router';
-import { MatPaginator } from '@angular/material';
+import { MatPaginator, MatGridList } from '@angular/material';
+import { MediaChange, MediaObserver } from '@angular/flex-layout';
 
 @Component({
   selector: 'app-tickers-list',
   templateUrl: './tickers-list.component.html',
   styleUrls: ['./tickers-list.component.css']
 })
-export class TickersListComponent implements OnInit {
+export class TickersListComponent implements OnInit, AfterContentInit {
 
   tickers: any;
   loading : boolean = true;
@@ -30,15 +31,31 @@ export class TickersListComponent implements OnInit {
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild('grid') grid: MatGridList;
+
+  gridByBreakpoint = {
+    xl: 8,
+    lg: 6,
+    md: 4,
+    sm: 2,
+    xs: 2
+  }
   
   constructor(
     private tickersService : TickersService,
-    private router: Router
+    private router: Router,
+    private mediaObserver: MediaObserver,
   ) { }
   
   ngOnInit() {
     this.getTickersNumber();
     this.loadTickers(this.startIndex, this.pageSize);
+  }
+
+  ngAfterContentInit() {
+    this.mediaObserver.media$.subscribe((change: MediaChange) => {
+      this.grid.cols = this.gridByBreakpoint[change.mqAlias];
+    });
   }
   
   getTickersNumber(){

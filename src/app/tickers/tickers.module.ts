@@ -10,6 +10,7 @@ import {
   MatInputModule,
   MatSelectModule
 } from '@angular/material';
+import { FlexLayoutModule, } from '@angular/flex-layout';
 
 import { TickersListComponent } from './components/tickers-list/tickers-list.component';
 import { TickerDetailComponent } from './components/ticker-detail/ticker-detail.component';
@@ -35,7 +36,8 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     MatSelectModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ]
 })
 export class TickersModule { }

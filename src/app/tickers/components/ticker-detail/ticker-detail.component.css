@@ -12,9 +12,9 @@ mat-divider{
     margin-top: 1rem;
 }
 table {
-    width: 40%;
-    margin-left:auto; 
-    margin-right:auto;
+    width: 80%;
+    margin-left:5%; 
+    margin-right:5%;
 }
 
 th {
